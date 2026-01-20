@@ -12,9 +12,9 @@ export function ModeToggle() {
   }, [theme, setTheme]);
 
   const getThemeLabel = () => {
-    if (theme === 'light') return '☀️ Light';
-    if (theme === 'dark') return '🌙 Dark';
-    return '🌓 System';
+    if (theme === 'light') return '☀️';
+    if (theme === 'dark') return '🌙';
+    return '🌓';
   };
 
   return (

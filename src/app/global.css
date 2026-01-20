@@ -1,4 +1,8 @@
-/* src/App.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* src/app/global.css */
 :root,
 .light {
   --background: #ffffff;

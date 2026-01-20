@@ -30,7 +30,7 @@ export default function SignInPage({ onNavigate }: SignInPageProps) {
           <text className="font-bold text-2xl">{'<'}</text>
         </view>
         <view className="flex-1 items-center">
-          <text className="font-serif-logo text-3xl tracking-tight text-primary">
+          <text className="font-serif-logo text-3xl tracking-tight uppercase font-bold text-primary">
             Presento
           </text>
         </view>
@@ -43,7 +43,9 @@ export default function SignInPage({ onNavigate }: SignInPageProps) {
       <view className="mb-12 flex flex-col items-center">
         <view className="w-24 h-24 bg-primary/10 rounded-[28%] flex items-center justify-center mb-8 relative border border-primary/40">
           <view className="absolute inset-0 bg-primary/5 blur-xl rounded-full" />
-          <text className="text-primary text-5xl font-bold">QR</text>
+          <view className="relative z-10">
+            <text className="text-5xl">📱</text>
+          </view>
         </view>
         <text className="text-foreground text-3xl font-bold tracking-tight">
           Sign In
