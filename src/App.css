@@ -1,6 +1,11 @@
 /* src/App.css */
 :root {
   background-color: #f9fafb; /* gray-50 */
+  --primary: #0ea5e9;
+  --primary-hover: #0284c7;
+  --radius: 12px;
+  --text-white: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.1);
 }
 
 /* Reset some default Lynx styles if needed */

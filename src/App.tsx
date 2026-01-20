@@ -25,11 +25,7 @@ export function App(props: { onRender?: () => void }) {
   props.onRender?.();
 
   return (
-    <scroll-view
-      className="flex-1 bg-gray-50"
-      scroll-y
-      style={{ height: '100%' }}
-    >
+    <scroll-view className="flex-1 bg-gray-50 h-full" scroll-y>
       <view className="p-6 gap-8">
         <view className="mb-4">
           <text className="text-3xl font-bold text-gray-900">Lynx UI</text>

@@ -1,0 +1,1 @@
+authentication page/views such as (e.g, signin, signup, etc)
