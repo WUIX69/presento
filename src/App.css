@@ -1,11 +1,28 @@
 /* src/App.css */
-:root {
-  background-color: #f9fafb; /* gray-50 */
-  --primary: #0ea5e9;
-  --primary-hover: #0284c7;
+:root,
+.light {
+  --background: #ffffff;
+  --foreground: #020817;
+  --card: #ffffff;
+  --card-foreground: #020817;
+  --muted: #f8fafc;
+  --muted-foreground: #64748b;
+  --border: #e2e8f0;
+  --input: #f8fafc;
   --radius: 12px;
-  --text-white: #ffffff;
-  --shadow: rgba(0, 0, 0, 0.1);
+  --primary-foreground: #ffffff;
+}
+
+.dark {
+  --background: #0a0510; /* near-black from auth page */
+  --foreground: #f8fafc;
+  --card: #121212; /* charcoal from sign-up */
+  --card-foreground: #f8fafc;
+  --muted: #1e1e1e; /* charcoal-light */
+  --muted-foreground: #94a3b8;
+  --border: #333333; /* field-border */
+  --input: #1a1025; /* input-bg from sign-in */
+  --primary-foreground: #ffffff;
 }
 
 /* Reset some default Lynx styles if needed */

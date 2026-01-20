@@ -12,11 +12,11 @@ export function Button({
   onTap,
 }: ButtonProps) {
   const variants = {
-    primary: 'bg-blue-600 active:bg-blue-700 text-white',
+    primary: 'bg-primary active:opacity-80 text-primary-foreground',
     outline:
-      'border border-gray-300 bg-transparent active:bg-gray-100 text-gray-900',
-    destructive: 'bg-red-500 active:bg-red-600 text-white',
-    ghost: 'bg-transparent active:bg-gray-100 text-gray-700',
+      'border border-border bg-transparent active:bg-muted text-foreground',
+    destructive: 'bg-red-500 active:opacity-80 text-white',
+    ghost: 'bg-transparent active:bg-muted text-foreground',
   };
 
   return (
@@ -25,7 +25,7 @@ export function Button({
       bindtap={onTap}
     >
       <text
-        className={`font-semibold text-sm ${variant === 'outline' || variant === 'ghost' ? 'text-gray-900' : 'text-white'}`}
+        className={`font-semibold text-sm ${variant === 'outline' || variant === 'ghost' ? 'text-foreground' : 'text-primary-foreground'}`}
       >
         {children}
       </text>

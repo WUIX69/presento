@@ -10,10 +10,10 @@ export function Alert({
   variant = 'default',
 }: AlertProps) {
   const variants = {
-    default: 'bg-blue-50 border-blue-200 text-blue-900',
-    destructive: 'bg-red-50 border-red-200 text-red-900',
-    success: 'bg-green-50 border-green-200 text-green-900',
-    warning: 'bg-yellow-50 border-yellow-200 text-yellow-900',
+    default: 'bg-primary/5 border-primary/20 text-primary',
+    destructive: 'bg-red-500/5 border-red-500/20 text-red-600',
+    success: 'bg-green-500/5 border-green-500/20 text-green-600',
+    warning: 'bg-yellow-500/5 border-yellow-500/20 text-yellow-600',
   };
 
   return (
@@ -30,7 +30,7 @@ interface AlertTitleProps {
 
 export function AlertTitle({ children, className = '' }: AlertTitleProps) {
   return (
-    <text className={`font-semibold text-sm mb-1 ${className}`}>
+    <text className={`font-semibold text-sm mb-1 text-foreground ${className}`}>
       {children}
     </text>
   );
@@ -45,5 +45,9 @@ export function AlertDescription({
   children,
   className = '',
 }: AlertDescriptionProps) {
-  return <text className={`text-sm ${className}`}>{children}</text>;
+  return (
+    <text className={`text-sm text-muted-foreground ${className}`}>
+      {children}
+    </text>
+  );
 }

@@ -10,17 +10,21 @@ export function Accordion({ title, children, className = '' }: AccordionProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <view className={`border-b border-gray-200 w-full ${className}`}>
+    <view className={`border-b border-border w-full ${className}`}>
       <view
-        className="py-4 flex-row justify-between items-center active:bg-gray-50"
+        className="py-4 flex-row justify-between items-center active:bg-muted"
         bindtap={() => setIsOpen(!isOpen)}
       >
-        <text className="font-medium text-gray-900">{title}</text>
-        <text className="text-gray-400 text-xl">{isOpen ? '−' : '+'}</text>
+        <text className="font-medium text-foreground">{title}</text>
+        <text className="text-muted-foreground text-xl">
+          {isOpen ? '−' : '+'}
+        </text>
       </view>
       {isOpen && (
         <view className="pb-4 px-1">
-          <text className="text-gray-600 text-sm leading-6">{children}</text>
+          <text className="text-muted-foreground text-sm leading-6">
+            {children}
+          </text>
         </view>
       )}
     </view>

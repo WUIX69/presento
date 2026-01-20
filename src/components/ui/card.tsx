@@ -5,7 +5,7 @@ interface CardProps {
 
 export const Card = ({ children, className = '' }: CardProps) => (
   <view
-    className={`bg-white border border-gray-200 rounded-xl shadow-sm ${className}`}
+    className={`bg-card border border-border rounded-xl shadow-sm ${className}`}
   >
     {children}
   </view>
@@ -17,9 +17,7 @@ interface CardHeaderProps {
 }
 
 export const CardHeader = ({ children, className = '' }: CardHeaderProps) => (
-  <view className={`p-4 border-b border-gray-100 ${className}`}>
-    {children}
-  </view>
+  <view className={`p-4 border-b border-border ${className}`}>{children}</view>
 );
 
 interface CardContentProps {
@@ -37,7 +35,7 @@ interface CardTitleProps {
 }
 
 export const CardTitle = ({ children, className = '' }: CardTitleProps) => (
-  <text className={`text-lg font-semibold text-gray-900 ${className}`}>
+  <text className={`text-lg font-semibold text-foreground ${className}`}>
     {children}
   </text>
 );
@@ -51,7 +49,9 @@ export const CardDescription = ({
   children,
   className = '',
 }: CardDescriptionProps) => (
-  <text className={`text-sm text-gray-500 mt-1 ${className}`}>{children}</text>
+  <text className={`text-sm text-muted-foreground mt-1 ${className}`}>
+    {children}
+  </text>
 );
 
 interface CardFooterProps {
@@ -60,7 +60,7 @@ interface CardFooterProps {
 }
 
 export const CardFooter = ({ children, className = '' }: CardFooterProps) => (
-  <view className={`p-4 border-t border-gray-100 flex-row gap-2 ${className}`}>
+  <view className={`p-4 border-t border-border flex-row gap-2 ${className}`}>
     {children}
   </view>
 );

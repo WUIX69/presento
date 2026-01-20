@@ -1,4 +1,4 @@
-import { useEffect } from '@lynx-js/react';
+import { useEffect, useState } from '@lynx-js/react';
 
 import './App.css';
 import { Button } from './components/ui/button';
@@ -18,24 +18,54 @@ import { Alert, AlertTitle, AlertDescription } from './components/ui/alert';
 import { Switch } from './components/ui/switch';
 import { Checkbox } from './components/ui/checkbox';
 
+// Auth Pages & Layout
+import RootLayout from './app/layout';
+import SignInPage from './app/auth/sign-in/page';
+import SignUpPage from './app/auth/sign-up/page';
+
 export function App(props: { onRender?: () => void }) {
+  const [currentPage, setCurrentPage] = useState<
+    'gallery' | 'sign-in' | 'sign-up'
+  >('sign-in');
+
   useEffect(() => {
     console.info('Hello, ReactLynx');
   }, []);
   props.onRender?.();
 
+  if (currentPage === 'sign-in') {
+    return (
+      <RootLayout>
+        <SignInPage onNavigate={setCurrentPage} />
+      </RootLayout>
+    );
+  }
+
+  if (currentPage === 'sign-up') {
+    return (
+      <RootLayout>
+        <SignUpPage onNavigate={setCurrentPage} />
+      </RootLayout>
+    );
+  }
+
   return (
-    <scroll-view className="flex-1 bg-gray-50 h-full" scroll-y>
+    <RootLayout>
       <view className="p-6 gap-8">
-        <view className="mb-4">
-          <text className="text-3xl font-bold text-gray-900">Lynx UI</text>
-          <text className="text-gray-500 mt-2">
-            Shadcn-inspired reusable components for ReactLynx.
-          </text>
+        <view className="flex-row items-center justify-between mb-4">
+          <view>
+            <text className="text-3xl font-bold text-foreground">Lynx UI</text>
+            <text className="text-muted-foreground mt-2">
+              Shadcn-inspired reusable components for ReactLynx.
+            </text>
+          </view>
+          <Button variant="outline" onTap={() => setCurrentPage('sign-in')}>
+            Auth Demo
+          </Button>
         </view>
         {/* Buttons Section */}
         <view className="gap-4">
-          <text className="text-sm font-semibold text-gray-400 uppercase tracking-wider">
+          <text className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
             Buttons
           </text>
           <view className="flex-row flex-wrap gap-2">
@@ -48,7 +78,7 @@ export function App(props: { onRender?: () => void }) {
         <Separator />
         {/* Alerts Section */}
         <view className="gap-4">
-          <text className="text-sm font-semibold text-gray-400 uppercase tracking-wider">
+          <text className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
             Alerts
           </text>
           <Alert variant="default">
@@ -67,7 +97,7 @@ export function App(props: { onRender?: () => void }) {
         <Separator />
         {/* Badges Section */}
         <view className="gap-4">
-          <text className="text-sm font-semibold text-gray-400 uppercase tracking-wider">
+          <text className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
             Badges
           </text>
           <view className="flex-row flex-wrap gap-2">
@@ -81,7 +111,7 @@ export function App(props: { onRender?: () => void }) {
         <Separator />
         {/* Cards Section */}
         <view className="gap-4">
-          <text className="text-sm font-semibold text-gray-400 uppercase tracking-wider">
+          <text className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
             Cards
           </text>
           <Card>
@@ -105,16 +135,16 @@ export function App(props: { onRender?: () => void }) {
         <Separator />
         {/* Forms Section */}
         <view className="gap-4">
-          <text className="text-sm font-semibold text-gray-400 uppercase tracking-wider">
+          <text className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
             Forms
           </text>
-          <view className="bg-white rounded-lg p-4 border border-gray-200 gap-4">
+          <view className="bg-card rounded-lg p-4 border border-border gap-4">
             <view className="flex-row items-center justify-between">
               <view className="gap-1">
-                <text className="text-sm font-medium text-gray-900">
+                <text className="text-sm font-medium text-foreground">
                   Enable Notifications
                 </text>
-                <text className="text-xs text-gray-500">
+                <text className="text-xs text-muted-foreground">
                   Receive alerts on your device.
                 </text>
               </view>
@@ -130,10 +160,10 @@ export function App(props: { onRender?: () => void }) {
         <Separator />
         {/* Accordion Section */}
         <view className="gap-4">
-          <text className="text-sm font-semibold text-gray-400 uppercase tracking-wider">
+          <text className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
             Accordion
           </text>
-          <view className="bg-white rounded-lg px-4 border border-gray-200">
+          <view className="bg-card rounded-lg px-4 border border-border">
             <Accordion title="Is it accessible?">
               Yes. It adheres to the WAI-ARIA design pattern.
             </Accordion>
@@ -149,6 +179,6 @@ export function App(props: { onRender?: () => void }) {
         </view>
         <view className="h-20" /> {/* Bottom Spacing */}
       </view>
-    </scroll-view>
+    </RootLayout>
   );
 }
