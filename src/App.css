@@ -1,0 +1,10 @@
+/* src/App.css */
+:root {
+  background-color: #f9fafb; /* gray-50 */
+}
+
+/* Reset some default Lynx styles if needed */
+view {
+  display: flex;
+  flex-direction: column;
+}
