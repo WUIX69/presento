@@ -1,7 +1,7 @@
 import { useCallback, useState } from '@lynx-js/react';
-import { Button } from '../../../components/ui/button';
-import { Input } from '../../../components/ui/input';
-import { ModeToggle } from '../../../components/ui/mode-toggle';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { ModeToggle } from '@/components/ui/mode-toggle';
 
 interface SignInPageProps {
   onNavigate?: (page: 'gallery' | 'sign-in' | 'sign-up') => void;

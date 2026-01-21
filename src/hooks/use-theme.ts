@@ -1,5 +1,5 @@
 import { createContext, useContext } from '@lynx-js/react';
-import type { ThemeProviderState } from '../types/theme';
+import type { ThemeProviderState } from '@/types/theme';
 
 export const ThemeProviderContext = createContext<
   ThemeProviderState | undefined

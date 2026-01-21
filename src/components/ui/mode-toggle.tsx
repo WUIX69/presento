@@ -1,5 +1,5 @@
 import { useCallback } from '@lynx-js/react';
-import { useTheme } from '../../hooks/use-theme';
+import { useTheme } from '@/hooks/use-theme';
 import { Button } from './button';
 
 export function ModeToggle() {

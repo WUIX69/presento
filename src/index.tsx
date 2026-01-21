@@ -1,27 +1,8 @@
 import '@lynx-js/preact-devtools';
 import '@lynx-js/react/debug';
-import { root, useState } from '@lynx-js/react';
-
-// Next.js style layout and pages
-import './app/global.css';
-import SignInPage from './app/auth/sign-in/page';
-import SignUpPage from './app/auth/sign-up/page';
-import RootLayout from './app/layout';
-import HomePage from './app/page';
-
-export function App() {
-  const [currentPage, setCurrentPage] = useState<
-    'gallery' | 'sign-in' | 'sign-up'
-  >('sign-in');
-
-  return (
-    <RootLayout>
-      {currentPage === 'gallery' && <HomePage onNavigate={setCurrentPage} />}
-      {currentPage === 'sign-in' && <SignInPage onNavigate={setCurrentPage} />}
-      {currentPage === 'sign-up' && <SignUpPage onNavigate={setCurrentPage} />}
-    </RootLayout>
-  );
-}
+import { root } from '@lynx-js/react';
+import { App } from './App';
+import './App.css';
 
 root.render(<App />);
 

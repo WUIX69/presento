@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global CSS Variables and Theme Configuration */
+
+/* Light Theme (Default) */
+:root,
+.light {
+  /* Background Colors */
+  --background: 0 0% 100%; /* #ffffff */
+  --foreground: 222.2 84% 4.9%; /* #020817 */
+
+  /* Card Colors */
+  --card: 0 0% 100%; /* #ffffff */
+  --card-foreground: 222.2 84% 4.9%; /* #020817 */
+
+  /* Popover Colors */
+  --popover: 0 0% 100%; /* #ffffff */
+  --popover-foreground: 222.2 84% 4.9%; /* #020817 */
+
+  /* Primary Colors */
+  --primary: 221.2 83.2% 53.3%; /* #2563eb - Blue */
+  --primary-foreground: 210 40% 98%; /* #f8fafc */
+
+  /* Secondary Colors */
+  --secondary: 210 40% 96.1%; /* #f1f5f9 */
+  --secondary-foreground: 222.2 47.4% 11.2%; /* #1e293b */
+
+  /* Muted Colors */
+  --muted: 210 40% 96.1%; /* #f1f5f9 */
+  --muted-foreground: 215.4 16.3% 46.9%; /* #64748b */
+
+  /* Accent Colors */
+  --accent: 210 40% 96.1%; /* #f1f5f9 */
+  --accent-foreground: 222.2 47.4% 11.2%; /* #1e293b */
+
+  /* Destructive Colors */
+  --destructive: 0 84.2% 60.2%; /* #ef4444 - Red */
+  --destructive-foreground: 210 40% 98%; /* #f8fafc */
+
+  /* Success Colors */
+  --success: 142.1 76.2% 36.3%; /* #22c55e - Green */
+  --success-foreground: 210 40% 98%; /* #f8fafc */
+
+  /* Warning Colors */
+  --warning: 38 92% 50%; /* #f59e0b - Orange */
+  --warning-foreground: 210 40% 98%; /* #f8fafc */
+
+  /* Border & Input */
+  --border: 214.3 31.8% 91.4%; /* #e2e8f0 */
+  --input: 214.3 31.8% 91.4%; /* #e2e8f0 */
+  --ring: 221.2 83.2% 53.3%; /* #2563eb */
+
+  /* Border Radius */
+  --radius: 0.75rem;
+}
+
+/* Dark Theme */
+.dark {
+  /* Background Colors */
+  --background: 240 10% 3.9%; /* #0a0510 */
+  --foreground: 210 40% 98%; /* #f8fafc */
+
+  /* Card Colors */
+  --card: 0 0% 7%; /* #121212 */
+  --card-foreground: 210 40% 98%; /* #f8fafc */
+
+  /* Popover Colors */
+  --popover: 0 0% 7%; /* #121212 */
+  --popover-foreground: 210 40% 98%; /* #f8fafc */
+
+  /* Primary Colors */
+  --primary: 217.2 91.2% 59.8%; /* #3b82f6 - Lighter Blue for dark mode */
+  --primary-foreground: 222.2 47.4% 11.2%; /* #1e293b */
+
+  /* Secondary Colors */
+  --secondary: 217.2 32.6% 17.5%; /* #1e293b */
+  --secondary-foreground: 210 40% 98%; /* #f8fafc */
+
+  /* Muted Colors */
+  --muted: 0 0% 12%; /* #1e1e1e */
+  --muted-foreground: 215 20.2% 65.1%; /* #94a3b8 */
+
+  /* Accent Colors */
+  --accent: 217.2 32.6% 17.5%; /* #1e293b */
+  --accent-foreground: 210 40% 98%; /* #f8fafc */
+
+  /* Destructive Colors */
+  --destructive: 0 62.8% 30.6%; /* #991b1b - Darker Red */
+  --destructive-foreground: 210 40% 98%; /* #f8fafc */
+
+  /* Success Colors */
+  --success: 142.1 70.6% 45.3%; /* #16a34a - Darker Green */
+  --success-foreground: 210 40% 98%; /* #f8fafc */
+
+  /* Warning Colors */
+  --warning: 38 92% 50%; /* #f59e0b - Orange */
+  --warning-foreground: 222.2 47.4% 11.2%; /* #1e293b */
+
+  /* Border & Input */
+  --border: 0 0% 20%; /* #333333 */
+  --input: 240 10% 10%; /* #1a1025 */
+  --ring: 217.2 91.2% 59.8%; /* #3b82f6 */
+
+  /* Border Radius */
+  --radius: 0.75rem;
+}
+
+/* Base Styles */
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  view {
+    display: flex;
+    flex-direction: column;
+  }
+
+  text {
+    color: hsl(var(--foreground));
+  }
+
+  :root {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+}
+
+/* Custom Animations */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-spin-reverse {
+  animation: spin-reverse 20s linear infinite;
+}

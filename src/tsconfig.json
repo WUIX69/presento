@@ -9,7 +9,22 @@
     "module": "ESNext",
     "moduleResolution": "Bundler",
 
-    "noEmit": true
+    "noEmit": true,
+
+    "baseUrl": ".",
+    "paths": {
+      "@/components/*": ["./components/*"],
+      "@/contexts/*": ["./contexts/*"],
+      "@/hooks/*": ["./hooks/*"],
+      "@/types/*": ["./types/*"],
+      "@/utils/*": ["./utils/*"],
+      "@/features/*": ["./features/*"],
+      "@/schemas/*": ["./schemas/*"],
+      "@/servers/*": ["./servers/*"],
+      "@/data/*": ["./data/*"],
+      "@/routes/*": ["./routes/*"],
+      "@/assets/*": ["./assets/*"]
+    }
   },
   "include": ["./**/*.ts", "./**/*.tsx"]
 }

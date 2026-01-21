@@ -1,6 +1,6 @@
 import type { ReactNode } from '@lynx-js/react';
-import { ThemeProvider } from '../contexts/theme-provider';
-import { useTheme } from '../hooks/use-theme';
+import { ThemeProvider } from '@/contexts/theme-provider';
+import { useTheme } from '@/hooks/use-theme';
 
 interface RootLayoutProps {
   children: ReactNode;
