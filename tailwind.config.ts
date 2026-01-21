@@ -1,5 +1,5 @@
-import type { Config } from 'tailwindcss';
 import lynxPreset from '@lynx-js/tailwind-preset';
+import type { Config } from 'tailwindcss';
 
 export default {
   // 1. Use the official Lynx preset

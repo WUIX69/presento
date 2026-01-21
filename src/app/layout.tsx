@@ -1,4 +1,4 @@
-import { type ReactNode } from '@lynx-js/react';
+import type { ReactNode } from '@lynx-js/react';
 import { ThemeProvider } from '../contexts/theme-provider';
 import { useTheme } from '../hooks/use-theme';
 

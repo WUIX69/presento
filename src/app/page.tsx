@@ -1,19 +1,19 @@
+import { Accordion } from '../components/ui/accordion';
+import { Alert, AlertDescription, AlertTitle } from '../components/ui/alert';
+import { Badge } from '../components/ui/badge';
 import { Button } from '../components/ui/button';
 import {
   Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
-  CardDescription,
-  CardContent,
-  CardFooter,
 } from '../components/ui/card';
-import { Input } from '../components/ui/input';
-import { Accordion } from '../components/ui/accordion';
-import { Badge } from '../components/ui/badge';
-import { Separator } from '../components/ui/separator';
-import { Alert, AlertTitle, AlertDescription } from '../components/ui/alert';
-import { Switch } from '../components/ui/switch';
 import { Checkbox } from '../components/ui/checkbox';
+import { Input } from '../components/ui/input';
+import { Separator } from '../components/ui/separator';
+import { Switch } from '../components/ui/switch';
 
 interface HomePageProps {
   onNavigate: (page: 'gallery' | 'sign-in' | 'sign-up') => void;

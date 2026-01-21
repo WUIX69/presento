@@ -1,6 +1,6 @@
-import { useEffect, useState, useCallback } from '@lynx-js/react';
-import type { Theme, ThemeProviderProps } from '../types/theme';
+import { useCallback, useEffect, useState } from '@lynx-js/react';
 import { ThemeProviderContext } from '../hooks/use-theme';
+import type { Theme, ThemeProviderProps } from '../types/theme';
 
 export function ThemeProvider({
   children,
