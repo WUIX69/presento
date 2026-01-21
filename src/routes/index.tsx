@@ -15,21 +15,27 @@ import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
 import { Switch } from '@/components/ui/switch';
 
-interface HomePageProps {
-  onNavigate: (page: 'gallery' | 'sign-in' | 'sign-up') => void;
+interface LandingPageProps {
+  onNavigate?: (page: 'gallery' | 'sign-in' | 'sign-up') => void;
 }
 
-export default function HomePage({ onNavigate }: HomePageProps) {
+/**
+ * Landing Page Component
+ *
+ * Displays the Lynx UI component showcase.
+ * This will be the index route (/) when using a router.
+ */
+const LandingPage = ({ onNavigate }: LandingPageProps) => {
   return (
     <view className="p-6 gap-8">
       <view className="flex-row items-center justify-between mb-4">
         <view>
-          <text className="text-3xl font-bold text-foreground">Lynx UI</text>
+          <text className="text-3xl font-bold text-foreground">Violeta UI</text>
           <text className="text-muted-foreground mt-2">
             Shadcn-inspired reusable components for ReactLynx.
           </text>
         </view>
-        <Button variant="outline" onTap={() => onNavigate('sign-in')}>
+        <Button variant="outline" onTap={() => onNavigate?.('sign-in')}>
           Auth Demo
         </Button>
       </view>
@@ -150,4 +156,6 @@ export default function HomePage({ onNavigate }: HomePageProps) {
       <view className="h-20" /> {/* Bottom Spacing */}
     </view>
   );
-}
+};
+
+export default LandingPage;

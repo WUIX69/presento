@@ -85,7 +85,7 @@ export function ThemeProvider({
         setTheme,
       }}
     >
-      {children}
+      <view className={activeTheme}>{children}</view>
     </ThemeProviderContext.Provider>
   );
 }

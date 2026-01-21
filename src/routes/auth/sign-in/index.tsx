@@ -1,13 +1,18 @@
 import { useCallback, useState } from '@lynx-js/react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { ModeToggle } from '@/components/ui/mode-toggle';
 
 interface SignInPageProps {
   onNavigate?: (page: 'gallery' | 'sign-in' | 'sign-up') => void;
 }
 
-export default function SignInPage({ onNavigate }: SignInPageProps) {
+/**
+ * Sign In Page Component
+ *
+ * Authentication page for students and admins.
+ * This will be the /auth/sign-in route when using a router.
+ */
+const SignInPage = ({ onNavigate }: SignInPageProps) => {
   const [role, setRole] = useState<'Student' | 'Admin'>('Student');
   const [showPassword, setShowPassword] = useState(false);
 
@@ -23,6 +28,7 @@ export default function SignInPage({ onNavigate }: SignInPageProps) {
     <view className="flex-1 flex flex-col items-center px-6 pt-6 pb-12 w-full max-w-[480px] mx-auto">
       {/* Header */}
       <view className="flex flex-row items-center w-full mb-8">
+        {/* TODO: Replace with router navigation */}
         <view
           className="text-primary size-12 flex items-center justify-start active:opacity-50"
           bindtap={() => onNavigate?.('gallery')}
@@ -34,9 +40,8 @@ export default function SignInPage({ onNavigate }: SignInPageProps) {
             Presento
           </text>
         </view>
-        <view className="size-12 items-end justify-center">
-          <ModeToggle />
-        </view>
+        {/* TODO: ModeToggle will be in Navbar */}
+        <view className="size-12" />
       </view>
 
       {/* Hero Icon */}
@@ -167,4 +172,6 @@ export default function SignInPage({ onNavigate }: SignInPageProps) {
       </view>
     </view>
   );
-}
+};
+
+export default SignInPage;

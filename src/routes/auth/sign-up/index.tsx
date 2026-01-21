@@ -6,7 +6,13 @@ interface SignUpPageProps {
   onNavigate?: (page: 'gallery' | 'sign-in' | 'sign-up') => void;
 }
 
-export default function SignUpPage({ onNavigate }: SignUpPageProps) {
+/**
+ * Sign Up Page Component
+ *
+ * Registration page for new students.
+ * This will be the /auth/sign-up route when using a router.
+ */
+const SignUpPage = ({ onNavigate }: SignUpPageProps) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePassword = useCallback(() => {
@@ -15,8 +21,9 @@ export default function SignUpPage({ onNavigate }: SignUpPageProps) {
 
   return (
     <view className="w-full flex-1 flex flex-col bg-background">
-      {/* Header - Overriding Layout Header style for Sign Up mock specifically */}
+      {/* Header */}
       <view className="flex flex-row items-center bg-background/80 p-4 pb-2 justify-between sticky top-0 z-20">
+        {/* TODO: Replace with router navigation */}
         <view
           className="text-foreground flex size-12 items-center justify-start active:opacity-50 transition-opacity"
           bindtap={() => onNavigate?.('sign-in')}
@@ -179,4 +186,6 @@ export default function SignUpPage({ onNavigate }: SignUpPageProps) {
       </view>
     </view>
   );
-}
+};
+
+export default SignUpPage;
