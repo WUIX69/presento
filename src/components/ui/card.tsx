@@ -1,5 +1,7 @@
+import { type ReactNode } from "@lynx-js/react";
+
 interface CardProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 }
 
@@ -12,7 +14,7 @@ export const Card = ({ children, className = "" }: CardProps) => (
 );
 
 interface CardHeaderProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   showBorder?: boolean;
 }
@@ -30,7 +32,7 @@ export const CardHeader = ({
 );
 
 interface CardContentProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 }
 
@@ -39,7 +41,7 @@ export const CardContent = ({ children, className = "" }: CardContentProps) => (
 );
 
 interface CardTitleProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 }
 
@@ -50,7 +52,7 @@ export const CardTitle = ({ children, className = "" }: CardTitleProps) => (
 );
 
 interface CardDescriptionProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 }
 
@@ -64,7 +66,7 @@ export const CardDescription = ({
 );
 
 interface CardFooterProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   showBorder?: boolean;
 }

@@ -1,16 +1,16 @@
 interface SeparatorProps {
   className?: string;
-  orientation?: 'horizontal' | 'vertical';
+  orientation?: "horizontal" | "vertical";
 }
 
 export function Separator({
-  className = '',
-  orientation = 'horizontal',
+  className = "",
+  orientation = "horizontal",
 }: SeparatorProps) {
   return (
     <view
       className={`bg-border ${
-        orientation === 'horizontal' ? 'h-px w-full' : 'w-px h-full'
+        orientation === "horizontal" ? "h-px w-full" : "w-px h-full"
       } ${className}`}
     />
   );
