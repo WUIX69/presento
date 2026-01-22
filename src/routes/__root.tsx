@@ -1,4 +1,5 @@
 import type { ReactNode } from "@lynx-js/react";
+import { createRootRoute, Outlet } from "@tanstack/react-router";
 import { ThemeProvider } from "@/contexts/theme-provider";
 import { useTheme } from "@/hooks/use-theme";
 
@@ -26,12 +27,22 @@ function LayoutContent({ children }: RootLayoutProps) {
 
 /**
  * Root Layout Component
- * Simplified layout that only provides theme context
+ * Wraps all routes with theme provider and layout
  */
-export default function RootLayout({ children }: RootLayoutProps) {
+function RootComponent() {
   return (
     <ThemeProvider>
-      <LayoutContent>{children}</LayoutContent>
+      <LayoutContent>
+        <Outlet />
+      </LayoutContent>
     </ThemeProvider>
   );
 }
+
+/**
+ * Root Route
+ * TanStack Router root route definition
+ */
+export const Route = createRootRoute({
+  component: RootComponent,
+});

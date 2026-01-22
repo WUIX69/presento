@@ -1,18 +1,14 @@
 import { useCallback, useState } from "@lynx-js/react";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-
-interface SignInPageProps {
-  onNavigate?: (
-    page: "home" | "sign-in" | "sign-up" | "student" | "teacher",
-  ) => void;
-}
 
 /**
  * Sign In Page Component
  * Centered layout matching the light theme design
  */
-const SignInPage = ({ onNavigate }: SignInPageProps) => {
+function SignInPage() {
+  const navigate = useNavigate();
   const [role, setRole] = useState<"Student" | "Admin">("Student");
   const [showPassword, setShowPassword] = useState(false);
 
@@ -33,7 +29,7 @@ const SignInPage = ({ onNavigate }: SignInPageProps) => {
         <view className="flex flex-row items-center justify-center mb-12 relative">
           <view
             className="absolute left-0 size-12 flex items-center justify-center active:opacity-50"
-            bindtap={() => onNavigate?.("home")}
+            bindtap={() => navigate({ to: "/" })}
           >
             <text className="text-2xl text-foreground">‹</text>
           </view>
@@ -161,7 +157,7 @@ const SignInPage = ({ onNavigate }: SignInPageProps) => {
           </text>
           <text
             className="text-sm font-bold text-primary ml-1 active:underline"
-            bindtap={() => onNavigate?.("sign-up")}
+            bindtap={() => navigate({ to: "/auth/sign-up" })}
           >
             Contact Admin
           </text>
@@ -169,6 +165,8 @@ const SignInPage = ({ onNavigate }: SignInPageProps) => {
       </view>
     </view>
   );
-};
+}
 
-export default SignInPage;
+export const Route = createFileRoute("/auth/sign-in/")({
+  component: SignInPage,
+});

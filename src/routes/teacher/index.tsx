@@ -1,3 +1,4 @@
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import {
   Card,
   CardContent,
@@ -5,17 +6,13 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 
-interface TeacherPageProps {
-  onNavigate?: (page: "home" | "sign-in" | "sign-up") => void;
-}
-
 /**
  * Teacher Index Page Component
  *
  * Welcome page for teachers after authentication.
- * This will be the /teacher route when using a router.
  */
-const TeacherPage = ({ onNavigate }: TeacherPageProps) => {
+function TeacherPage() {
+  const navigate = useNavigate();
   return (
     <view className="flex-1 flex flex-col items-center justify-center px-6 py-12 w-full max-w-[480px] mx-auto">
       {/* Welcome Icon */}
@@ -51,13 +48,15 @@ const TeacherPage = ({ onNavigate }: TeacherPageProps) => {
       <view className="mt-12">
         <view
           className="px-6 py-3 bg-primary/10 rounded-xl border border-primary/40 active:bg-primary/20"
-          bindtap={() => onNavigate?.("home")}
+          bindtap={() => navigate({ to: "/" })}
         >
           <text className="text-primary font-semibold">Back to Home</text>
         </view>
       </view>
     </view>
   );
-};
+}
 
-export default TeacherPage;
+export const Route = createFileRoute("/teacher/")({
+  component: TeacherPage,
+});

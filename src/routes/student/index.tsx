@@ -1,3 +1,4 @@
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import {
   Card,
   CardContent,
@@ -5,17 +6,13 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 
-interface StudentPageProps {
-  onNavigate?: (page: "home" | "sign-in" | "sign-up") => void;
-}
-
 /**
  * Student Index Page Component
  *
  * Welcome page for students after authentication.
- * This will be the /student route when using a router.
  */
-const StudentPage = ({ onNavigate }: StudentPageProps) => {
+function StudentPage() {
+  const navigate = useNavigate();
   return (
     <view className="flex-1 flex flex-col items-center justify-center px-6 py-12 w-full max-w-[480px] mx-auto">
       {/* Welcome Icon */}
@@ -51,13 +48,15 @@ const StudentPage = ({ onNavigate }: StudentPageProps) => {
       <view className="mt-12">
         <view
           className="px-6 py-3 bg-primary/10 rounded-xl border border-primary/40 active:bg-primary/20"
-          bindtap={() => onNavigate?.("home")}
+          bindtap={() => navigate({ to: "/" })}
         >
           <text className="text-primary font-semibold">Back to Home</text>
         </view>
       </view>
     </view>
   );
-};
+}
 
-export default StudentPage;
+export const Route = createFileRoute("/student/")({
+  component: StudentPage,
+});

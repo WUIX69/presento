@@ -1,18 +1,15 @@
 import { useCallback, useState } from "@lynx-js/react";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-
-interface SignUpPageProps {
-  onNavigate?: (page: "home" | "sign-in" | "sign-up") => void;
-}
 
 /**
  * Sign Up Page Component
  *
  * Registration page for new students.
- * This will be the /auth/sign-up route when using a router.
  */
-const SignUpPage = ({ onNavigate }: SignUpPageProps) => {
+function SignUpPage() {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePassword = useCallback(() => {
@@ -26,7 +23,7 @@ const SignUpPage = ({ onNavigate }: SignUpPageProps) => {
       <view className="flex flex-row items-center bg-background/80 backdrop-blur-md p-4 pb-2 justify-between sticky top-0 z-20">
         <view
           className="text-foreground flex size-12 items-center justify-start active:opacity-50 transition-opacity"
-          bindtap={() => onNavigate?.("sign-in")}
+          bindtap={() => navigate({ to: "/auth/sign-in" })}
         >
           <text className="font-bold text-2xl">{"<"}</text>
         </view>
@@ -176,7 +173,7 @@ const SignUpPage = ({ onNavigate }: SignUpPageProps) => {
           </text>
           <text
             className="text-primary font-bold ml-1 active:underline"
-            bindtap={() => onNavigate?.("sign-in")}
+            bindtap={() => navigate({ to: "/auth/sign-in" })}
           >
             Log In
           </text>
@@ -184,6 +181,8 @@ const SignUpPage = ({ onNavigate }: SignUpPageProps) => {
       </view>
     </view>
   );
-};
+}
 
-export default SignUpPage;
+export const Route = createFileRoute("/auth/sign-up/")({
+  component: SignUpPage,
+});

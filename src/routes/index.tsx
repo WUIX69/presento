@@ -1,3 +1,4 @@
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import {
   Card,
   CardDescription,
@@ -6,17 +7,13 @@ import {
 } from "@/components/ui/card";
 import { ModeToggle } from "@/components/ui/mode-toggle";
 
-interface LandingPageProps {
-  onNavigate?: (
-    page: "home" | "sign-in" | "sign-up" | "student" | "teacher",
-  ) => void;
-}
-
 /**
  * Landing Page Component
  * Simple navigation page with 3 cards
  */
-const LandingPage = ({ onNavigate }: LandingPageProps) => {
+function LandingPage() {
+  const navigate = useNavigate();
+
   return (
     <view className="min-h-screen p-8 ">
       {/* Header: Title (left) + Theme Toggle (right) */}
@@ -33,7 +30,7 @@ const LandingPage = ({ onNavigate }: LandingPageProps) => {
       {/* Navigation Cards */}
       <view className="flex flex-col gap-4 max-w-2xl">
         {/* Auth Card */}
-        <view bindtap={() => onNavigate?.("sign-in")}>
+        <view bindtap={() => navigate({ to: "/auth/sign-in" })}>
           <Card className="active:scale-[0.98] transition-transform">
             <CardHeader className="p-5">
               <view className="flex flex-row items-center gap-4">
@@ -52,7 +49,7 @@ const LandingPage = ({ onNavigate }: LandingPageProps) => {
         </view>
 
         {/* Student Card */}
-        <view bindtap={() => onNavigate?.("student")}>
+        <view bindtap={() => navigate({ to: "/student" })}>
           <Card className="active:scale-[0.98] transition-transform">
             <CardHeader className="p-5">
               <view className="flex flex-row items-center gap-4">
@@ -71,7 +68,7 @@ const LandingPage = ({ onNavigate }: LandingPageProps) => {
         </view>
 
         {/* Teacher Card */}
-        <view bindtap={() => onNavigate?.("teacher")}>
+        <view bindtap={() => navigate({ to: "/teacher" })}>
           <Card className="active:scale-[0.98] transition-transform">
             <CardHeader className="p-5">
               <view className="flex flex-row items-center gap-4">
@@ -91,6 +88,8 @@ const LandingPage = ({ onNavigate }: LandingPageProps) => {
       </view>
     </view>
   );
-};
+}
 
-export default LandingPage;
+export const Route = createFileRoute("/")({
+  component: LandingPage,
+});

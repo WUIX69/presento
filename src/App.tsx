@@ -1,41 +1,34 @@
-import { useState } from "@lynx-js/react";
-import RootLayout from "./routes/_layout";
-import SignInPage from "./routes/auth/sign-in/index";
-import SignUpPage from "./routes/auth/sign-up/index";
-import LandingPage from "./routes/index";
-import StudentPage from "./routes/student/index";
-import TeacherPage from "./routes/teacher/index";
+import {
+  createMemoryHistory,
+  createRouter,
+  RouterProvider,
+} from "@tanstack/react-router";
+import { routeTree } from "./routeTree.gen";
 
-type Page = "home" | "sign-in" | "sign-up" | "student" | "teacher";
+/**
+ * Create Memory History
+ * Required for Lynx environment (no window.history)
+ */
+const memoryHistory = createMemoryHistory({
+  initialEntries: ["/"],
+});
+
+/**
+ * Create Router Instance
+ * With Lynx-specific configuration
+ */
+const router = createRouter({
+  routeTree,
+  history: memoryHistory,
+  isServer: false, // Required for Lynx background thread
+});
 
 /**
  * App Component
  *
- * Main application component with manual routing.
- * This will be replaced with TanStack Router or React Router in the future.
- *
- * Layout hierarchy:
- * RootLayout (ThemeProvider + Navbar + Footer + Scroll + Background) > Page
+ * Main application component with TanStack Router.
+ * The router handles all navigation and layout is provided by __root.tsx
  */
-export const App = () => {
-  const [currentPage, setCurrentPage] = useState<Page>("home");
-
-  const renderPage = () => {
-    switch (currentPage) {
-      case "home":
-        return <LandingPage onNavigate={setCurrentPage} />;
-      case "sign-in":
-        return <SignInPage onNavigate={setCurrentPage} />;
-      case "sign-up":
-        return <SignUpPage onNavigate={setCurrentPage} />;
-      case "student":
-        return <StudentPage onNavigate={setCurrentPage} />;
-      case "teacher":
-        return <TeacherPage onNavigate={setCurrentPage} />;
-      default:
-        return <LandingPage onNavigate={setCurrentPage} />;
-    }
-  };
-
-  return <RootLayout>{renderPage()}</RootLayout>;
-};
+export function App() {
+  return <RouterProvider router={router} />;
+}
