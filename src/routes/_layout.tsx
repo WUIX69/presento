@@ -8,36 +8,16 @@ interface RootLayoutProps {
 
 /**
  * Layout Content Component
- * Applies the theme class to the root view
+ * Minimal wrapper that applies theme and provides scroll container
  */
 function LayoutContent({ children }: RootLayoutProps) {
-  const { activeTheme, theme } = useTheme();
-
-  console.log(
-    'LayoutContent render - theme:',
-    theme,
-    'activeTheme:',
-    activeTheme,
-  );
+  const { activeTheme } = useTheme();
 
   return (
     <view
-      className={`h-screen w-screen flex font-display relative ${activeTheme} bg-background text-foreground`}
+      className={`h-screen w-screen ${activeTheme} bg-background text-foreground`}
     >
-      {/* Background Gradients - subtle purple glow */}
-      <view
-        className={`absolute top-0 right-0 -translate-y-1/3 translate-x-1/3 w-96 h-96 rounded-full blur-[100px] pointer-events-none ${
-          activeTheme === 'dark' ? 'bg-primary/10' : 'bg-primary/10'
-        }`}
-      />
-      <view
-        className={`absolute bottom-0 left-0 translate-y-1/3 -translate-x-1/3 w-96 h-96 rounded-full blur-[100px] pointer-events-none ${
-          activeTheme === 'dark' ? 'bg-accent-violet/5' : 'bg-accent-violet/5'
-        }`}
-      />
-
-      {/* Main Content with Scroll */}
-      <scroll-view scroll-y className="flex-1">
+      <scroll-view scroll-y className="h-full w-full">
         {children}
       </scroll-view>
     </view>
@@ -46,17 +26,7 @@ function LayoutContent({ children }: RootLayoutProps) {
 
 /**
  * Root Layout Component
- *
- * Single layout that wraps the entire application with:
- * - ThemeProvider (automatically applies theme class)
- * - Background gradients
- * - Scroll container
- * - Navbar (future)
- * - Footer (future)
- *
- * Compatible with:
- * - TanStack Router: Use as root layout with <Outlet />
- * - React Router: Wrap <RouterProvider> with this component
+ * Simplified layout that only provides theme context
  */
 export default function RootLayout({ children }: RootLayoutProps) {
   return (

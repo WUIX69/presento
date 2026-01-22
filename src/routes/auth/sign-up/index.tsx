@@ -1,9 +1,9 @@
-import { useCallback, useState } from '@lynx-js/react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import { useCallback, useState } from "@lynx-js/react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 interface SignUpPageProps {
-  onNavigate?: (page: 'gallery' | 'sign-in' | 'sign-up') => void;
+  onNavigate?: (page: "gallery" | "sign-in" | "sign-up") => void;
 }
 
 /**
@@ -16,7 +16,7 @@ const SignUpPage = ({ onNavigate }: SignUpPageProps) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePassword = useCallback(() => {
-    'background only';
+    "background only";
     setShowPassword((prev) => !prev);
   }, []);
 
@@ -26,9 +26,9 @@ const SignUpPage = ({ onNavigate }: SignUpPageProps) => {
       <view className="flex flex-row items-center bg-background/80 backdrop-blur-md p-4 pb-2 justify-between sticky top-0 z-20">
         <view
           className="text-foreground flex size-12 items-center justify-start active:opacity-50 transition-opacity"
-          bindtap={() => onNavigate?.('sign-in')}
+          bindtap={() => onNavigate?.("sign-in")}
         >
-          <text className="font-bold text-2xl">{'<'}</text>
+          <text className="font-bold text-2xl">{"<"}</text>
         </view>
         <view className="flex flex-col items-center flex-1 pr-12">
           <text className="text-primary text-[11px] uppercase tracking-[0.25em] font-extrabold text-center">
@@ -96,7 +96,7 @@ const SignUpPage = ({ onNavigate }: SignUpPageProps) => {
               <view className="relative">
                 <Input
                   placeholder="••••••••"
-                  type={showPassword ? 'text' : 'password'}
+                  type={showPassword ? "text" : "password"}
                   className="bg-card border-border border-[1.5px] rounded-xl h-14 text-foreground pr-12 placeholder:text-muted-foreground"
                 />
                 <view
@@ -104,7 +104,7 @@ const SignUpPage = ({ onNavigate }: SignUpPageProps) => {
                   bindtap={togglePassword}
                 >
                   <text className="text-muted-foreground text-xs">
-                    {showPassword ? 'HIDE' : 'SHOW'}
+                    {showPassword ? "HIDE" : "SHOW"}
                   </text>
                 </view>
               </view>
@@ -151,7 +151,7 @@ const SignUpPage = ({ onNavigate }: SignUpPageProps) => {
                   className="bg-card border-border border-[1.5px] rounded-xl h-14 text-foreground pl-16 placeholder:text-muted-foreground"
                 />
               </view>
-              <view className="flex-row items-start gap-2 mt-3">
+              <view className="flex flex-row items-start gap-2 mt-3 w-full">
                 <text className="text-primary mt-1">💬</text>
                 <text className="text-muted-foreground text-xs italic leading-relaxed flex-1">
                   SMS alerts will be sent to this number automatically upon
@@ -170,13 +170,13 @@ const SignUpPage = ({ onNavigate }: SignUpPageProps) => {
         </view>
 
         {/* Login Link */}
-        <view className="px-6 text-center flex-row justify-center pb-12">
+        <view className="px-6 text-center flex flex-row justify-center pb-12">
           <text className="text-[15px] text-muted-foreground">
-            Already have an account?{' '}
+            Already have an account?{" "}
           </text>
           <text
             className="text-primary font-bold ml-1 active:underline"
-            bindtap={() => onNavigate?.('sign-in')}
+            bindtap={() => onNavigate?.("sign-in")}
           >
             Log In
           </text>
