@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
+  :root,
+  .light {
     /* Light Mode Palette */
     --background: 255 255 255; /* #ffffff */
     --foreground: 18 18 18; /* #121212 */

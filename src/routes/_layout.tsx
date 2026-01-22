@@ -1,6 +1,6 @@
-import type { ReactNode } from '@lynx-js/react';
-import { ThemeProvider } from '@/contexts/theme-provider';
-import { useTheme } from '@/hooks/use-theme';
+import type { ReactNode } from "@lynx-js/react";
+import { ThemeProvider } from "@/contexts/theme-provider";
+import { useTheme } from "@/hooks/use-theme";
 
 interface RootLayoutProps {
   children: ReactNode;
@@ -15,7 +15,7 @@ function LayoutContent({ children }: RootLayoutProps) {
 
   return (
     <view
-      className={`h-screen w-screen ${activeTheme} bg-background text-foreground`}
+      className={`h-screen w-screen ${activeTheme === "dark" ? "dark" : "light"} bg-background text-foreground`}
     >
       <scroll-view scroll-y className="h-full w-full">
         {children}
