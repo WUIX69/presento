@@ -2,195 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Global CSS Variables and Theme Configuration */
-
-/* Light Theme (Default) */
-:root,
-.light {
-  /* Background Colors */
-  --background: 0 0% 100%; /* #ffffff */
-  --foreground: 222.2 84% 4.9%; /* #020817 */
-
-  /* Card Colors */
-  --card: 0 0% 100%; /* #ffffff */
-  --card-foreground: 222.2 84% 4.9%; /* #020817 */
-
-  /* Popover Colors */
-  --popover: 0 0% 100%; /* #ffffff */
-  --popover-foreground: 222.2 84% 4.9%; /* #020817 */
-
-  /* Primary Colors */
-  --primary: 221.2 83.2% 53.3%; /* #2563eb - Blue */
-  --primary-foreground: 210 40% 98%; /* #f8fafc */
-
-  /* Secondary Colors */
-  --secondary: 210 40% 96.1%; /* #f1f5f9 */
-  --secondary-foreground: 222.2 47.4% 11.2%; /* #1e293b */
-
-  /* Muted Colors */
-  --muted: 210 40% 96.1%; /* #f1f5f9 */
-  --muted-foreground: 215.4 16.3% 46.9%; /* #64748b */
-
-  /* Accent Colors */
-  --accent: 210 40% 96.1%; /* #f1f5f9 */
-  --accent-foreground: 222.2 47.4% 11.2%; /* #1e293b */
-
-  /* Destructive Colors */
-  --destructive: 0 84.2% 60.2%; /* #ef4444 - Red */
-  --destructive-foreground: 210 40% 98%; /* #f8fafc */
-
-  /* Success Colors */
-  --success: 142.1 76.2% 36.3%; /* #22c55e - Green */
-  --success-foreground: 210 40% 98%; /* #f8fafc */
-
-  /* Warning Colors */
-  --warning: 38 92% 50%; /* #f59e0b - Orange */
-  --warning-foreground: 210 40% 98%; /* #f8fafc */
-
-  /* Border & Input */
-  --border: 214.3 31.8% 91.4%; /* #e2e8f0 */
-  --input: 214.3 31.8% 91.4%; /* #e2e8f0 */
-  --ring: 221.2 83.2% 53.3%; /* #2563eb */
-
-  /* Border Radius */
-  --radius: 0.75rem;
-}
-
-/* Dark Theme */
-.dark {
-  /* Background Colors */
-  --background: 240 10% 3.9%; /* #0a0510 */
-  --foreground: 210 40% 98%; /* #f8fafc */
-
-  /* Card Colors */
-  --card: 0 0% 7%; /* #121212 */
-  --card-foreground: 210 40% 98%; /* #f8fafc */
-
-  /* Popover Colors */
-  --popover: 0 0% 7%; /* #121212 */
-  --popover-foreground: 210 40% 98%; /* #f8fafc */
-
-  /* Primary Colors */
-  --primary: 217.2 91.2% 59.8%; /* #3b82f6 - Lighter Blue for dark mode */
-  --primary-foreground: 222.2 47.4% 11.2%; /* #1e293b */
-
-  /* Secondary Colors */
-  --secondary: 217.2 32.6% 17.5%; /* #1e293b */
-  --secondary-foreground: 210 40% 98%; /* #f8fafc */
-
-  /* Muted Colors */
-  --muted: 0 0% 12%; /* #1e1e1e */
-  --muted-foreground: 215 20.2% 65.1%; /* #94a3b8 */
-
-  /* Accent Colors */
-  --accent: 217.2 32.6% 17.5%; /* #1e293b */
-  --accent-foreground: 210 40% 98%; /* #f8fafc */
-
-  /* Destructive Colors */
-  --destructive: 0 62.8% 30.6%; /* #991b1b - Darker Red */
-  --destructive-foreground: 210 40% 98%; /* #f8fafc */
-
-  /* Success Colors */
-  --success: 142.1 70.6% 45.3%; /* #16a34a - Darker Green */
-  --success-foreground: 210 40% 98%; /* #f8fafc */
-
-  /* Warning Colors */
-  --warning: 38 92% 50%; /* #f59e0b - Orange */
-  --warning-foreground: 222.2 47.4% 11.2%; /* #1e293b */
-
-  /* Border & Input */
-  --border: 0 0% 20%; /* #333333 */
-  --input: 240 10% 10%; /* #1a1025 */
-  --ring: 217.2 91.2% 59.8%; /* #3b82f6 */
-
-  /* Border Radius */
-  --radius: 0.75rem;
-}
-
-/* Base Styles */
 @layer base {
-  * {
-    box-sizing: border-box;
-  }
-
-  view {
-    display: flex;
-    flex-direction: column;
-  }
-
-  text {
-    color: hsl(var(--foreground));
-  }
-
-  /* Dark mode text colors */
-  .dark text {
-    color: #ffffff;
-  }
-
-  .dark .text-zinc-300 {
-    color: #d4d4d8;
-  }
-
-  .dark .text-zinc-400 {
-    color: #a1a1aa;
-  }
-
-  .dark .text-zinc-500 {
-    color: #71717a;
-  }
-
-  .dark .text-muted-foreground {
-    color: #a1a1aa;
-  }
-
-  .dark .text-foreground {
-    color: #ffffff;
-  }
-
   :root {
-    background-color: hsl(var(--background));
-    color: hsl(var(--foreground));
+    /* Light Mode Palette */
+    --background: 255 255 255; /* #ffffff */
+    --foreground: 18 18 18; /* #121212 */
+
+    --card: 255 255 255;
+    --card-foreground: 18 18 18;
+
+    --popover: 255 255 255;
+    --popover-foreground: 18 18 18;
+
+    --primary: 139 92 246; /* #8b5cf6 */
+    --primary-foreground: 255 255 255;
+
+    --secondary: 167 139 250; /* #a78bfa */
+    --secondary-foreground: 30 27 75; /* #1e1b4b */
+
+    --muted: 241 245 249; /* #f1f5f9 */
+    --muted-foreground: 100 116 139; /* #64748b */
+
+    --accent: 241 245 249;
+    --accent-foreground: 15 23 42;
+
+    --destructive: 239 68 68;
+    --destructive-foreground: 255 255 255;
+
+    --border: 226 232 240; /* #e2e8f0 */
+    --input: 226 232 240;
+    --ring: 139 92 246; /* #8b5cf6 */
+
+    --radius: 0.5rem;
   }
 
   .dark {
-    background-color: #121212;
-    color: #ffffff;
-  }
+    /* Dark Mode Palette */
+    --background: 18 18 18; /* #121212 (Charcoal) */
+    --foreground: 255 255 255;
 
-  /* Light mode */
-  .light {
-    background-color: #ffffff;
-    color: #1f2937;
-  }
+    --card: 26 26 26; /* #1a1a1a (Card Dark) */
+    --card-foreground: 255 255 255;
 
-  .light text {
-    color: #1f2937;
-  }
-}
+    --popover: 26 26 26;
+    --popover-foreground: 255 255 255;
 
-/* Custom Animations */
-@keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+    --primary: 139 92 246; /* #8b5cf6 */
+    --primary-foreground: 255 255 255;
 
-@keyframes spin-reverse {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
-}
+    --secondary: 167 139 250; /* #a78bfa */
+    --secondary-foreground: 30 27 75; /* #1e1b4b */
 
-.animate-spin-slow {
-  animation: spin-slow 20s linear infinite;
-}
+    --muted: 30 30 30; /* #1e1e1e */
+    --muted-foreground: 161 161 170; /* #a1a1aa */
 
-.animate-spin-reverse {
-  animation: spin-reverse 20s linear infinite;
+    --accent: 30 27 75; /* #1e1b4b (Deep Violet) */
+    --accent-foreground: 255 255 255;
+
+    --destructive: 127 29 29;
+    --destructive-foreground: 255 255 255;
+
+    --border: 51 51 51; /* #333333 (Field Border) */
+    --input: 51 51 51;
+    --ring: 139 92 246; /* #8b5cf6 */
+  }
 }

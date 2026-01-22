@@ -9,7 +9,7 @@ export function Separator({
 }: SeparatorProps) {
   return (
     <view
-      className={`bg-gray-200 ${
+      className={`bg-border ${
         orientation === 'horizontal' ? 'h-px w-full' : 'w-px h-full'
       } ${className}`}
     />

@@ -14,7 +14,7 @@ export const Badge = ({
     primary: 'bg-primary/10 text-primary',
     success: 'bg-green-500/10 text-green-600',
     warning: 'bg-yellow-500/10 text-yellow-600',
-    destructive: 'bg-red-500/10 text-red-600',
+    destructive: 'bg-destructive/10 text-destructive',
   };
 
   return (

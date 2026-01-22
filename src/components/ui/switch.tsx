@@ -22,7 +22,7 @@ export function Switch({
   return (
     <view
       className={`w-11 h-6 rounded-full p-1 ${
-        internalChecked ? 'bg-blue-600' : 'bg-gray-200'
+        internalChecked ? 'bg-primary' : 'bg-input'
       } ${className}`}
       bindtap={toggle}
     >

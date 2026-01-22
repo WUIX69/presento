@@ -1,5 +1,5 @@
 interface StudentPageProps {
-  onNavigate?: (page: "gallery" | "sign-in" | "sign-up") => void;
+  onNavigate?: (page: 'gallery' | 'sign-in' | 'sign-up') => void;
 }
 
 /**
@@ -44,7 +44,7 @@ const StudentPage = ({ onNavigate }: StudentPageProps) => {
       <view className="mt-12">
         <view
           className="px-6 py-3 bg-primary/10 rounded-xl border border-primary/40 active:bg-primary/20"
-          bindtap={() => onNavigate?.("gallery")}
+          bindtap={() => onNavigate?.('gallery')}
         >
           <text className="text-primary font-semibold">Back to Home</text>
         </view>

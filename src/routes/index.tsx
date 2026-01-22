@@ -1,7 +1,7 @@
-import { Accordion } from "@/components/ui/accordion";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Accordion } from '@/components/ui/accordion';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
@@ -9,16 +9,16 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Input } from "@/components/ui/input";
-import { Separator } from "@/components/ui/separator";
-import { Switch } from "@/components/ui/switch";
-import { ModeToggle } from "@/components/ui/mode-toggle";
+} from '@/components/ui/card';
+import { Checkbox } from '@/components/ui/checkbox';
+import { Input } from '@/components/ui/input';
+import { ModeToggle } from '@/components/ui/mode-toggle';
+import { Separator } from '@/components/ui/separator';
+import { Switch } from '@/components/ui/switch';
 
 interface LandingPageProps {
   onNavigate?: (
-    page: "gallery" | "sign-in" | "sign-up" | "student" | "teacher",
+    page: 'gallery' | 'sign-in' | 'sign-up' | 'student' | 'teacher',
   ) => void;
 }
 
@@ -40,7 +40,7 @@ const LandingPage = ({ onNavigate }: LandingPageProps) => {
         </view>
         <view className="flex-row gap-2 items-center">
           <ModeToggle />
-          <Button variant="outline" onTap={() => onNavigate?.("sign-in")}>
+          <Button variant="outline" onTap={() => onNavigate?.('sign-in')}>
             Auth Demo
           </Button>
         </view>
@@ -51,7 +51,7 @@ const LandingPage = ({ onNavigate }: LandingPageProps) => {
           Quick Access
         </text>
         <view className="flex-row gap-4">
-          <view className="flex-1" bindtap={() => onNavigate?.("student")}>
+          <view className="flex-1" bindtap={() => onNavigate?.('student')}>
             <Card>
               <CardContent className="p-6 items-center gap-3">
                 <view className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center border border-primary/40">
@@ -66,7 +66,7 @@ const LandingPage = ({ onNavigate }: LandingPageProps) => {
               </CardContent>
             </Card>
           </view>
-          <view className="flex-1" bindtap={() => onNavigate?.("teacher")}>
+          <view className="flex-1" bindtap={() => onNavigate?.('teacher')}>
             <Card>
               <CardContent className="p-6 items-center gap-3">
                 <view className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center border border-primary/40">

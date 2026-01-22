@@ -1,6 +1,6 @@
-import type { ReactNode } from "@lynx-js/react";
-import { ThemeProvider } from "@/contexts/theme-provider";
-import { useTheme } from "@/hooks/use-theme";
+import type { ReactNode } from '@lynx-js/react';
+import { ThemeProvider } from '@/contexts/theme-provider';
+import { useTheme } from '@/hooks/use-theme';
 
 interface RootLayoutProps {
   children: ReactNode;
@@ -14,29 +14,25 @@ function LayoutContent({ children }: RootLayoutProps) {
   const { activeTheme, theme } = useTheme();
 
   console.log(
-    "LayoutContent render - theme:",
+    'LayoutContent render - theme:',
     theme,
-    "activeTheme:",
+    'activeTheme:',
     activeTheme,
   );
 
   return (
     <view
-      className={`h-screen w-screen flex font-display relative ${activeTheme} ${
-        activeTheme === "dark"
-          ? "bg-charcoal text-white"
-          : "bg-white text-gray-900"
-      }`}
+      className={`h-screen w-screen flex font-display relative ${activeTheme} bg-background text-foreground`}
     >
       {/* Background Gradients - subtle purple glow */}
       <view
         className={`absolute top-0 right-0 -translate-y-1/3 translate-x-1/3 w-96 h-96 rounded-full blur-[100px] pointer-events-none ${
-          activeTheme === "dark" ? "bg-primary/10" : "bg-primary/10"
+          activeTheme === 'dark' ? 'bg-primary/10' : 'bg-primary/10'
         }`}
       />
       <view
         className={`absolute bottom-0 left-0 translate-y-1/3 -translate-x-1/3 w-96 h-96 rounded-full blur-[100px] pointer-events-none ${
-          activeTheme === "dark" ? "bg-accent-violet/5" : "bg-accent-violet/5"
+          activeTheme === 'dark' ? 'bg-accent-violet/5' : 'bg-accent-violet/5'
         }`}
       />
 

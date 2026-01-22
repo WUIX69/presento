@@ -1,48 +1,74 @@
-import lynxPreset from "@lynx-js/tailwind-preset";
-import type { Config } from "tailwindcss";
+import lynxPreset from '@lynx-js/tailwind-preset';
+import type { Config } from 'tailwindcss';
 
 export default {
   // 1. Use the official Lynx preset
   presets: [lynxPreset],
   // 2. Point to your source files
-  content: ["./src/**/*.{js,ts,jsx,tsx}"],
-  darkMode: "class",
+  content: ['./src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        primary: "#9d66ff", // Primary purple (sign-up uses this)
-        "primary-alt": "#8b5cf6", // Alternative primary (sign-in uses this)
-        charcoal: "#121212", // Main background
-        "charcoal-light": "#1e1e1e", // Cards, inputs
-        "field-border": "#333333", // Borders
-        "accent-violet": "#e0ccff", // Light purple accent
-        "near-black": "#0a0510", // Near black background (sign-in)
-        "input-bg": "#1a1025", // Input background (sign-in)
-        secondary: "#a78bfa", // Secondary violet
-        // Keep some compatibility colors
-        border: "var(--border)",
-        input: "var(--input)",
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: {
+          DEFAULT: 'rgb(var(--primary) / <alpha-value>)',
+          foreground: 'rgb(var(--primary-foreground) / <alpha-value>)',
+        },
+        'primary-alt': '#9d66ff', // Primary Purple (Sign Up specific)
+        secondary: {
+          DEFAULT: 'rgb(var(--secondary) / <alpha-value>)',
+          foreground: 'rgb(var(--secondary-foreground) / <alpha-value>)',
+        },
+        'deep-violet': '#1e1b4b', // Deep background accent
+        'near-black': '#0a0510', // Sign-in background
+        'input-bg': '#1a1025', // Input background
+        charcoal: '#121212', // Main background
+        'card-dark': '#1a1a1a', // Card background
+        'charcoal-light': '#1e1e1e', // Alt card/input
+        'field-border': '#333333', // Border color
+        'accent-violet': '#e0ccff', // Light accent
+
+        // Standard Mappings for Compatibility
+        border: 'rgb(var(--border) / <alpha-value>)',
+        input: 'rgb(var(--input) / <alpha-value>)',
+        ring: 'rgb(var(--ring) / <alpha-value>)',
+        background: 'rgb(var(--background) / <alpha-value>)',
+        foreground: 'rgb(var(--foreground) / <alpha-value>)',
+
         card: {
-          DEFAULT: "var(--card)",
-          foreground: "var(--card-foreground)",
+          DEFAULT: 'rgb(var(--card) / <alpha-value>)',
+          foreground: 'rgb(var(--card-foreground) / <alpha-value>)',
         },
         muted: {
-          DEFAULT: "var(--muted)",
-          foreground: "var(--muted-foreground)",
+          DEFAULT: 'rgb(var(--muted) / <alpha-value>)',
+          foreground: 'rgb(var(--muted-foreground) / <alpha-value>)',
+        },
+        accent: {
+          DEFAULT: 'rgb(var(--accent) / <alpha-value>)',
+          foreground: 'rgb(var(--accent-foreground) / <alpha-value>)',
+        },
+        popover: {
+          DEFAULT: 'rgb(var(--popover) / <alpha-value>)',
+          foreground: 'rgb(var(--popover-foreground) / <alpha-value>)',
+        },
+        destructive: {
+          DEFAULT: 'rgb(var(--destructive) / <alpha-value>)',
+          foreground: 'rgb(var(--destructive-foreground) / <alpha-value>)',
         },
       },
       fontFamily: {
-        display: ["Lexend", "sans-serif"],
-        "serif-logo": ["Playfair Display", "serif"],
+        display: ['Lexend', 'sans-serif'],
+        'serif-logo': ['Playfair Display', 'serif'],
       },
       borderRadius: {
-        DEFAULT: "0.5rem",
-        lg: "0.75rem",
-        xl: "1rem",
-        "2xl": "1.5rem",
-        full: "9999px",
+        DEFAULT: '0.5rem',
+        lg: '0.75rem',
+        xl: '1rem',
+        '2xl': '1.5rem',
+        full: '9999px',
+      },
+      boxShadow: {
+        'ios-shadow': '0 12px 24px -6px rgba(139, 92, 246, 0.4)',
       },
     },
   },

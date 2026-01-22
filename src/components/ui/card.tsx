@@ -3,7 +3,7 @@ interface CardProps {
   className?: string;
 }
 
-export const Card = ({ children, className = "" }: CardProps) => (
+export const Card = ({ children, className = '' }: CardProps) => (
   <view
     className={`bg-card border border-border rounded-xl shadow-sm ${className}`}
   >
@@ -16,7 +16,7 @@ interface CardHeaderProps {
   className?: string;
 }
 
-export const CardHeader = ({ children, className = "" }: CardHeaderProps) => (
+export const CardHeader = ({ children, className = '' }: CardHeaderProps) => (
   <view className={`p-4 border-b border-border ${className}`}>{children}</view>
 );
 
@@ -25,7 +25,7 @@ interface CardContentProps {
   className?: string;
 }
 
-export const CardContent = ({ children, className = "" }: CardContentProps) => (
+export const CardContent = ({ children, className = '' }: CardContentProps) => (
   <view className={`p-4 ${className}`}>{children}</view>
 );
 
@@ -34,7 +34,7 @@ interface CardTitleProps {
   className?: string;
 }
 
-export const CardTitle = ({ children, className = "" }: CardTitleProps) => (
+export const CardTitle = ({ children, className = '' }: CardTitleProps) => (
   <text className={`text-lg font-semibold text-foreground ${className}`}>
     {children}
   </text>
@@ -47,7 +47,7 @@ interface CardDescriptionProps {
 
 export const CardDescription = ({
   children,
-  className = "",
+  className = '',
 }: CardDescriptionProps) => (
   <text className={`text-sm text-muted-foreground mt-1 ${className}`}>
     {children}
@@ -59,7 +59,7 @@ interface CardFooterProps {
   className?: string;
 }
 
-export const CardFooter = ({ children, className = "" }: CardFooterProps) => (
+export const CardFooter = ({ children, className = '' }: CardFooterProps) => (
   <view className={`p-4 border-t border-border flex-row gap-2 ${className}`}>
     {children}
   </view>

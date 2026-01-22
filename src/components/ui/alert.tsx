@@ -11,7 +11,7 @@ export function Alert({
 }: AlertProps) {
   const variants = {
     default: 'bg-primary/5 border-primary/20 text-primary',
-    destructive: 'bg-red-500/5 border-red-500/20 text-red-600',
+    destructive: 'bg-destructive/10 border-destructive/20 text-destructive',
     success: 'bg-green-500/5 border-green-500/20 text-green-600',
     warning: 'bg-yellow-500/5 border-yellow-500/20 text-yellow-600',
   };

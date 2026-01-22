@@ -25,9 +25,7 @@ export function Checkbox({
     <view className="flex-row items-center gap-2" bindtap={toggle}>
       <view
         className={`w-5 h-5 rounded border flex justify-center items-center ${
-          internalChecked
-            ? 'bg-blue-600 border-blue-600'
-            : 'bg-white border-gray-300'
+          internalChecked ? 'bg-primary border-primary' : 'bg-card border-input'
         } ${className}`}
       >
         {internalChecked && (
