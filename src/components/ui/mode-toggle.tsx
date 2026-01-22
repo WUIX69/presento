@@ -1,29 +1,34 @@
-import { useCallback } from '@lynx-js/react';
-import { useTheme } from '@/hooks/use-theme';
-import { Button } from './button';
+import { useCallback } from "@lynx-js/react";
+import { useTheme } from "@/hooks/use-theme";
+import { Button } from "./button";
 
 export function ModeToggle() {
   const { theme, setTheme } = useTheme();
 
   const handleToggle = useCallback(() => {
-    if (theme === 'light') setTheme('dark');
-    else if (theme === 'dark') setTheme('system');
-    else setTheme('light');
+    "background only";
+    console.log("Current theme:", theme);
+    if (theme === "light") {
+      console.log("Switching to dark");
+      setTheme("dark");
+    } else if (theme === "dark") {
+      console.log("Switching to system");
+      setTheme("system");
+    } else {
+      console.log("Switching to light");
+      setTheme("light");
+    }
   }, [theme, setTheme]);
 
   const getThemeLabel = () => {
-    if (theme === 'light') return '☀️';
-    if (theme === 'dark') return '🌙';
-    return '🌓';
+    if (theme === "light") return "☀️";
+    if (theme === "dark") return "🌙";
+    return "🌓";
   };
 
   return (
-    <Button
-      variant="outline"
-      className="px-4 py-2 rounded-lg border border-border"
-      onTap={handleToggle}
-    >
-      <text className="text-foreground font-medium text-sm">
+    <Button variant="ghost" onTap={handleToggle}>
+      <text className="text-foreground font-medium text-xl">
         {getThemeLabel()}
       </text>
     </Button>

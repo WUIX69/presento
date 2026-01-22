@@ -122,9 +122,49 @@
     color: hsl(var(--foreground));
   }
 
+  /* Dark mode text colors */
+  .dark text {
+    color: #ffffff;
+  }
+
+  .dark .text-zinc-300 {
+    color: #d4d4d8;
+  }
+
+  .dark .text-zinc-400 {
+    color: #a1a1aa;
+  }
+
+  .dark .text-zinc-500 {
+    color: #71717a;
+  }
+
+  .dark .text-muted-foreground {
+    color: #a1a1aa;
+  }
+
+  .dark .text-foreground {
+    color: #ffffff;
+  }
+
   :root {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
+  }
+
+  .dark {
+    background-color: #121212;
+    color: #ffffff;
+  }
+
+  /* Light mode */
+  .light {
+    background-color: #ffffff;
+    color: #1f2937;
+  }
+
+  .light text {
+    color: #1f2937;
   }
 }
 

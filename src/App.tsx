@@ -1,10 +1,12 @@
-import { useState } from '@lynx-js/react';
-import RootLayout from './routes/_layout';
-import SignInPage from './routes/auth/sign-in/index';
-import SignUpPage from './routes/auth/sign-up/index';
-import LandingPage from './routes/index';
+import { useState } from "@lynx-js/react";
+import RootLayout from "./routes/_layout";
+import SignInPage from "./routes/auth/sign-in/index";
+import SignUpPage from "./routes/auth/sign-up/index";
+import LandingPage from "./routes/index";
+import StudentPage from "./routes/student/index";
+import TeacherPage from "./routes/teacher/index";
 
-type Page = 'gallery' | 'sign-in' | 'sign-up';
+type Page = "gallery" | "sign-in" | "sign-up" | "student" | "teacher";
 
 /**
  * App Component
@@ -16,16 +18,20 @@ type Page = 'gallery' | 'sign-in' | 'sign-up';
  * RootLayout (ThemeProvider + Navbar + Footer + Scroll + Background) > Page
  */
 export const App = () => {
-  const [currentPage, setCurrentPage] = useState<Page>('gallery');
+  const [currentPage, setCurrentPage] = useState<Page>("gallery");
 
   const renderPage = () => {
     switch (currentPage) {
-      case 'gallery':
+      case "gallery":
         return <LandingPage onNavigate={setCurrentPage} />;
-      case 'sign-in':
+      case "sign-in":
         return <SignInPage onNavigate={setCurrentPage} />;
-      case 'sign-up':
+      case "sign-up":
         return <SignUpPage onNavigate={setCurrentPage} />;
+      case "student":
+        return <StudentPage onNavigate={setCurrentPage} />;
+      case "teacher":
+        return <TeacherPage onNavigate={setCurrentPage} />;
       default:
         return <LandingPage onNavigate={setCurrentPage} />;
     }

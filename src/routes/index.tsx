@@ -1,7 +1,7 @@
-import { Accordion } from '@/components/ui/accordion';
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
+import { Accordion } from "@/components/ui/accordion";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -9,14 +9,17 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
-import { Checkbox } from '@/components/ui/checkbox';
-import { Input } from '@/components/ui/input';
-import { Separator } from '@/components/ui/separator';
-import { Switch } from '@/components/ui/switch';
+} from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Input } from "@/components/ui/input";
+import { Separator } from "@/components/ui/separator";
+import { Switch } from "@/components/ui/switch";
+import { ModeToggle } from "@/components/ui/mode-toggle";
 
 interface LandingPageProps {
-  onNavigate?: (page: 'gallery' | 'sign-in' | 'sign-up') => void;
+  onNavigate?: (
+    page: "gallery" | "sign-in" | "sign-up" | "student" | "teacher",
+  ) => void;
 }
 
 /**
@@ -35,10 +38,52 @@ const LandingPage = ({ onNavigate }: LandingPageProps) => {
             Shadcn-inspired reusable components for ReactLynx.
           </text>
         </view>
-        <Button variant="outline" onTap={() => onNavigate?.('sign-in')}>
-          Auth Demo
-        </Button>
+        <view className="flex-row gap-2 items-center">
+          <ModeToggle />
+          <Button variant="outline" onTap={() => onNavigate?.("sign-in")}>
+            Auth Demo
+          </Button>
+        </view>
       </view>
+      {/* Role Navigation Section */}
+      <view className="gap-4 mb-4">
+        <text className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+          Quick Access
+        </text>
+        <view className="flex-row gap-4">
+          <view className="flex-1" bindtap={() => onNavigate?.("student")}>
+            <Card>
+              <CardContent className="p-6 items-center gap-3">
+                <view className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center border border-primary/40">
+                  <text className="text-4xl">🎓</text>
+                </view>
+                <text className="text-foreground font-bold text-lg">
+                  Student
+                </text>
+                <text className="text-muted-foreground text-xs text-center">
+                  Access student portal
+                </text>
+              </CardContent>
+            </Card>
+          </view>
+          <view className="flex-1" bindtap={() => onNavigate?.("teacher")}>
+            <Card>
+              <CardContent className="p-6 items-center gap-3">
+                <view className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center border border-primary/40">
+                  <text className="text-4xl">👨‍🏫</text>
+                </view>
+                <text className="text-foreground font-bold text-lg">
+                  Teacher
+                </text>
+                <text className="text-muted-foreground text-xs text-center">
+                  Access teacher portal
+                </text>
+              </CardContent>
+            </Card>
+          </view>
+        </view>
+      </view>
+      <Separator />
       {/* Buttons Section */}
       <view className="gap-4">
         <text className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">

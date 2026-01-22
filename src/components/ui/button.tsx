@@ -1,22 +1,22 @@
 interface ButtonProps {
   children: React.ReactNode;
   className?: string;
-  variant?: 'primary' | 'outline' | 'destructive' | 'ghost';
+  variant?: "primary" | "outline" | "destructive" | "ghost";
   onTap?: () => void;
 }
 
 export function Button({
   children,
-  className = '',
-  variant = 'primary',
+  className = "",
+  variant = "primary",
   onTap,
 }: ButtonProps) {
   const variants = {
-    primary: 'bg-primary active:opacity-80 text-primary-foreground',
+    primary: "bg-primary active:opacity-80 text-primary-foreground",
     outline:
-      'border border-border bg-transparent active:bg-muted text-foreground',
-    destructive: 'bg-red-500 active:opacity-80 text-white',
-    ghost: 'bg-transparent active:bg-muted text-foreground',
+      "border border-border bg-transparent active:bg-muted text-foreground",
+    destructive: "bg-red-500 active:opacity-80 text-white",
+    ghost: "bg-transparent active:bg-muted text-foreground",
   };
 
   return (
@@ -25,7 +25,7 @@ export function Button({
       bindtap={onTap}
     >
       <text
-        className={`font-semibold text-sm ${variant === 'outline' || variant === 'ghost' ? 'text-foreground' : 'text-primary-foreground'}`}
+        className={`font-semibold text-sm ${variant === "outline" || variant === "ghost" ? "text-foreground" : "text-primary-foreground"}`}
       >
         {children}
       </text>
