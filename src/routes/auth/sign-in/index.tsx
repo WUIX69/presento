@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 
 interface SignInPageProps {
   onNavigate?: (
-    page: "gallery" | "sign-in" | "sign-up" | "student" | "teacher",
+    page: "home" | "sign-in" | "sign-up" | "student" | "teacher",
   ) => void;
 }
 
@@ -33,7 +33,7 @@ const SignInPage = ({ onNavigate }: SignInPageProps) => {
         <view className="flex flex-row items-center justify-center mb-12 relative">
           <view
             className="absolute left-0 size-12 flex items-center justify-center active:opacity-50"
-            bindtap={() => onNavigate?.("gallery")}
+            bindtap={() => onNavigate?.("home")}
           >
             <text className="text-2xl text-foreground">‹</text>
           </view>

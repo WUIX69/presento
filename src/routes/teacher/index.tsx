@@ -1,5 +1,12 @@
+import {
+  Card,
+  CardContent,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
+
 interface TeacherPageProps {
-  onNavigate?: (page: 'gallery' | 'sign-in' | 'sign-up') => void;
+  onNavigate?: (page: "home" | "sign-in" | "sign-up") => void;
 }
 
 /**
@@ -30,21 +37,21 @@ const TeacherPage = ({ onNavigate }: TeacherPageProps) => {
 
       {/* Quick Actions Placeholder */}
       <view className="w-full gap-4 mt-8">
-        <view className="bg-card rounded-2xl p-6 border border-border">
-          <text className="text-foreground font-semibold text-lg mb-2">
-            Quick Actions
-          </text>
-          <text className="text-muted-foreground text-sm">
-            Your dashboard features will appear here
-          </text>
-        </view>
+        <Card className="rounded-2xl">
+          <CardContent className="p-6">
+            <CardTitle className="mb-2">Quick Actions</CardTitle>
+            <CardDescription>
+              Your dashboard features will appear here
+            </CardDescription>
+          </CardContent>
+        </Card>
       </view>
 
       {/* Back Button */}
       <view className="mt-12">
         <view
           className="px-6 py-3 bg-primary/10 rounded-xl border border-primary/40 active:bg-primary/20"
-          bindtap={() => onNavigate?.('gallery')}
+          bindtap={() => onNavigate?.("home")}
         >
           <text className="text-primary font-semibold">Back to Home</text>
         </view>

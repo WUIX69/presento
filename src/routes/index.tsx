@@ -8,7 +8,7 @@ import { ModeToggle } from "@/components/ui/mode-toggle";
 
 interface LandingPageProps {
   onNavigate?: (
-    page: "gallery" | "sign-in" | "sign-up" | "student" | "teacher",
+    page: "home" | "sign-in" | "sign-up" | "student" | "teacher",
   ) => void;
 }
 

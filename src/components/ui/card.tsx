@@ -14,10 +14,19 @@ export const Card = ({ children, className = "" }: CardProps) => (
 interface CardHeaderProps {
   children: React.ReactNode;
   className?: string;
+  showBorder?: boolean;
 }
 
-export const CardHeader = ({ children, className = "" }: CardHeaderProps) => (
-  <view className={`p-4 border-b border-border ${className}`}>{children}</view>
+export const CardHeader = ({
+  children,
+  className = "",
+  showBorder = false,
+}: CardHeaderProps) => (
+  <view
+    className={`p-4 ${showBorder ? "border-b border-border" : ""} ${className}`}
+  >
+    {children}
+  </view>
 );
 
 interface CardContentProps {
@@ -57,10 +66,17 @@ export const CardDescription = ({
 interface CardFooterProps {
   children: React.ReactNode;
   className?: string;
+  showBorder?: boolean;
 }
 
-export const CardFooter = ({ children, className = "" }: CardFooterProps) => (
-  <view className={`p-4 border-t border-border flex-row gap-2 ${className}`}>
+export const CardFooter = ({
+  children,
+  className = "",
+  showBorder = false,
+}: CardFooterProps) => (
+  <view
+    className={`p-4 ${showBorder ? "border-t border-border" : ""} flex-row gap-2 ${className}`}
+  >
     {children}
   </view>
 );
