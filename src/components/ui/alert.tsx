@@ -1,19 +1,21 @@
+import { type ReactNode } from "@lynx-js/react";
+
 interface AlertProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
-  variant?: 'default' | 'destructive' | 'success' | 'warning';
+  variant?: "default" | "destructive" | "success" | "warning";
 }
 
 export function Alert({
   children,
-  className = '',
-  variant = 'default',
+  className = "",
+  variant = "default",
 }: AlertProps) {
   const variants = {
-    default: 'bg-primary/5 border-primary/20 text-primary',
-    destructive: 'bg-destructive/10 border-destructive/20 text-destructive',
-    success: 'bg-green-500/5 border-green-500/20 text-green-600',
-    warning: 'bg-yellow-500/5 border-yellow-500/20 text-yellow-600',
+    default: "bg-primary/5 border-primary/20 text-primary",
+    destructive: "bg-destructive/10 border-destructive/20 text-destructive",
+    success: "bg-green-500/5 border-green-500/20 text-green-600",
+    warning: "bg-yellow-500/5 border-yellow-500/20 text-yellow-600",
   };
 
   return (
@@ -24,11 +26,11 @@ export function Alert({
 }
 
 interface AlertTitleProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 }
 
-export function AlertTitle({ children, className = '' }: AlertTitleProps) {
+export function AlertTitle({ children, className = "" }: AlertTitleProps) {
   return (
     <text className={`font-semibold text-sm mb-1 text-foreground ${className}`}>
       {children}
@@ -37,13 +39,13 @@ export function AlertTitle({ children, className = '' }: AlertTitleProps) {
 }
 
 interface AlertDescriptionProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 }
 
 export function AlertDescription({
   children,
-  className = '',
+  className = "",
 }: AlertDescriptionProps) {
   return (
     <text className={`text-sm text-muted-foreground ${className}`}>

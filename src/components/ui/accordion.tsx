@@ -1,12 +1,12 @@
-import { useState } from '@lynx-js/react';
+import { type ReactNode, useState } from "@lynx-js/react";
 
 interface AccordionProps {
   title: string;
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 }
 
-export function Accordion({ title, children, className = '' }: AccordionProps) {
+export function Accordion({ title, children, className = "" }: AccordionProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -17,7 +17,7 @@ export function Accordion({ title, children, className = '' }: AccordionProps) {
       >
         <text className="font-medium text-foreground">{title}</text>
         <text className="text-muted-foreground text-xl">
-          {isOpen ? '−' : '+'}
+          {isOpen ? "−" : "+"}
         </text>
       </view>
       {isOpen && (
